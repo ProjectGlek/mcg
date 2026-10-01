@@ -1,2 +1,4 @@
 - [Главная](README.md)
 - [Как писать свои доки](tutorial.md)
+- [Godot](/godot/godot)
+  - [Обучалка по 2д](/godot/godot2dtutorial)
