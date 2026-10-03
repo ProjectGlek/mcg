@@ -1,4 +1,5 @@
 - [Главная](README.md)
 - [Как писать свои доки](tutorial.md)
+- [Ищем визуальный стиль](visuals.md)
 - [Godot](/godot/godot)
   - [Обучалка по 2д](/godot/godot2dtutorial)
