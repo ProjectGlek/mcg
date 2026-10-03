@@ -1,7 +1,7 @@
 # Ищем визуальный стиль
 
 Вариант А
-![[Pasted image 20261003192554.png]]
+![[Pasted image 20261003192554.png]](media/Pasted image 20261003192554.png)
 
 Вариант Б
 ![[Pasted image 20261003192703.png]]
