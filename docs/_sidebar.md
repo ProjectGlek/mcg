@@ -3,3 +3,4 @@
 - [Ищем визуальный стиль](visuals.md)
 - [Godot](/godot/godot)
   - [Обучалка по 2д](/godot/godot2dtutorial)
+- [Ночной аишный брейншторм 05.10](nbrsm1.md)
