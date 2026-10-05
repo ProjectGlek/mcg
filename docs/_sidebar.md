@@ -1,6 +1,6 @@
 - [Главная](README.md)
-- [Как писать свои доки](refs.md)
-- [Таблица рефов](visuals.md)
+- [Как писать свои доки](tutorial.md)
+- [Таблица рефов](refs.md)
 - [Ищем визуальный стиль](visuals.md)
 - [Godot](/godot/godot)
   - [Обучалка по 2д](/godot/godot2dtutorial)
