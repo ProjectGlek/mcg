@@ -1,0 +1,83 @@
+/* Sidebar polish; loaded after Docsify's theme so these rules stay local. */
+:root {
+  --sidebar-group-border: color-mix(in srgb, var(--color-mono-3) 38%, transparent);
+  --sidebar-level-1: color-mix(in srgb, var(--theme-color) 8%, var(--color-bg));
+  --sidebar-level-2: color-mix(in srgb, var(--theme-color) 14%, var(--color-bg));
+  --sidebar-level-3: color-mix(in srgb, var(--theme-color) 19%, var(--color-bg));
+}
+
+.sidebar-nav > ul,
+.sidebar-nav ul {
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin: 0;
+}
+
+.sidebar-nav > ul > li {
+  margin: 0.35rem 0;
+}
+
+.sidebar-nav li > a {
+  display: block;
+  padding: 0.55rem 0.7rem;
+  border-bottom: 1px solid var(--sidebar-group-border);
+  border-radius: 0.35rem;
+  transition: background-color 140ms ease, color 140ms ease;
+}
+
+.sidebar-nav li > a:hover,
+.sidebar-nav li > a:focus-visible {
+  background: color-mix(in srgb, var(--theme-color) 12%, var(--color-bg));
+  text-decoration: none;
+}
+
+/* Distinct nested surfaces make the tree structure readable at a glance. */
+.sidebar-nav > ul > li > ul {
+  margin: 0.25rem 0 0.55rem 0.65rem;
+  padding: 0.25rem 0.35rem 0.25rem 0.55rem;
+  border-left: 2px solid var(--sidebar-group-border);
+  border-radius: 0 0.4rem 0.4rem 0;
+  background: var(--sidebar-level-1);
+}
+
+.sidebar-nav > ul > li > ul > li > ul {
+  margin: 0.2rem 0 0.35rem 0.45rem;
+  padding: 0.2rem 0.25rem 0.2rem 0.45rem;
+  border-left: 2px solid var(--sidebar-group-border);
+  border-radius: 0 0.35rem 0.35rem 0;
+  background: var(--sidebar-level-2);
+}
+
+.sidebar-nav > ul > li > ul > li > ul > li > ul {
+  margin: 0.15rem 0 0.25rem 0.35rem;
+  padding: 0.15rem 0.2rem 0.15rem 0.35rem;
+  border-left: 2px solid var(--sidebar-group-border);
+  border-radius: 0 0.3rem 0.3rem 0;
+  background: var(--sidebar-level-3);
+}
+
+.sidebar-nav li > ul > li > a {
+  padding: 0.45rem 0.55rem;
+  border-bottom-color: color-mix(in srgb, var(--sidebar-group-border) 65%, transparent);
+}
+
+.sidebar-nav li.active > a,
+.sidebar-nav li > a.active,
+.sidebar-nav li > a[aria-current="page"] {
+  background: #9b8cff;
+  border-bottom-color: transparent;
+  border-radius: 0;
+  box-shadow:
+    inset 0 2px 5px rgb(0 0 0 / 32%),
+    inset 3px 0 0 #9b8cff,
+    inset -3px 0 0 #9b8cff,
+    inset 0 -1px 0 rgb(255 255 255 / 12%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-nav li > a {
+    transition: none;
+  }
+}

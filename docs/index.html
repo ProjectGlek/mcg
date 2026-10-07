@@ -7,14 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/addons/core-dark.min.css">
+  <link rel="stylesheet" href="sidebar.css">
 </head>
-<body>
+<body class="sidebar-group-box">
   <div id="app">Загрузка базы знаний...</div>
   <script>
     window.$docsify = {
       name: 'MAGIC KITTY',
       loadSidebar: true,
-      subMaxLevel: 3,
+      collapsibleSidebarGroups: true,
+      collapseSidebarGroups: true,
+      subMaxLevel: 0,
       search: {
         maxAge: 86400000,
         paths: 'auto',
