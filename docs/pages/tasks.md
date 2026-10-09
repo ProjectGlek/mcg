@@ -14,3 +14,9 @@ CEO, Head of Tech, Head of Art, Head of HR and Legacy. Пепикме Ванял
 
 ![пупу](../media/pickme1.jpg)
 ![пупу](../media/pickme2.jpg)
+
+Задачи пепикме:
+
+- Мурчать
+- Ванять
+- Прагривать пададияльный воздух вонью
