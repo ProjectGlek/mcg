@@ -11,3 +11,4 @@
   - [Бонусный вариант](nbrsm/bonus.md ':class=no-chevron')
 - [Попытки придумать крутую кор механику](coolcoremech.md)
 - [Ritual Demo](ritual-demo.md)
+- [Ritual Demo 2](ritual-demo2.md)

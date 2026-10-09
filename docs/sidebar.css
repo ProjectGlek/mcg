@@ -130,8 +130,6 @@
 }
 
 .ritual-demo__restart:hover { background: white; }
-.ritual-demo__restart[aria-pressed="true"]:not([data-ritual-spawn]) { background: #e8ddf8; border-color: #a98bd4; }
-.ritual-demo__restart[data-ritual-spawn]:hover { background: white; }
 
 .ritual-demo__stage {
   position: relative;
@@ -248,7 +246,48 @@
   font-size: 0.78rem;
 }
 
+.ritual-demo2__dialogue[hidden] { display: none !important; }
+.ritual-demo2__dialogue.is-player-line { grid-template-columns: minmax(0, 1fr); }
+.ritual-demo2__dialogue.is-player-line .ritual-demo2__portrait { display: none; }
+
+.ritual-demo2__dialogue {
+  position: absolute;
+  z-index: 5;
+  right: 0.6rem;
+  bottom: 0.6rem;
+  left: 0.6rem;
+  display: grid;
+  grid-template-columns: minmax(6.5rem, 34%) minmax(0, 1fr);
+  align-items: end;
+  gap: 0.7rem;
+  padding: 0.65rem;
+  overflow: hidden;
+  border: 2px solid rgb(241 218 255 / 88%);
+  border-radius: 1.1rem;
+  background: linear-gradient(145deg, rgb(43 34 61 / 97%), rgb(81 58 103 / 97%));
+  box-shadow: 0 10px 34px rgb(28 16 45 / 48%);
+  color: #fff;
+}
+
+.ritual-demo2__portrait {
+  display: block;
+  align-self: end;
+  width: 100%;
+  max-height: min(270px, 38vh);
+  object-fit: contain;
+  object-position: bottom center;
+  filter: drop-shadow(0 0 15px rgb(210 162 255 / 30%));
+}
+
+.ritual-demo2__dialogue-copy { min-width: 0; padding: 0.25rem 0.25rem 0.15rem 0; }
+.ritual-demo2__speaker { color: #f6d99e; font-size: 0.72rem; font-weight: 900; letter-spacing: 0.08em; }
+.ritual-demo2__line { min-height: 5.2em; margin: 0.45rem 0 0.7rem; color: #fff9ff; font-size: clamp(0.82rem, 2.6vw, 1rem); line-height: 1.4; }
+.ritual-demo2__next { float: right; background: #f2d6ff; border-color: #ffeaff; color: #3e2857; }
+
 @media (max-width: 540px) {
   .ritual-demo__heading { align-items: flex-start; }
   .ritual-demo__restart { padding: 0.45rem 0.65rem; font-size: 0.74rem; }
+  .ritual-demo2__dialogue { grid-template-columns: minmax(5.25rem, 30%) minmax(0, 1fr); gap: 0.4rem; padding: 0.5rem; }
+  .ritual-demo2__portrait { max-height: min(225px, 34vh); }
+  .ritual-demo2__line { min-height: 5.8em; margin-top: 0.35rem; font-size: 0.82rem; }
 }
