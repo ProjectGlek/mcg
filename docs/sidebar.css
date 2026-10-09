@@ -81,3 +81,174 @@
     transition: none;
   }
 }
+
+.ritual-demo {
+  --ritual-ink: #392f51;
+  margin: 1.5rem 0 2.25rem;
+  padding: clamp(0.9rem, 2.5vw, 1.5rem);
+  border: 1px solid rgb(202 185 255 / 42%);
+  border-radius: 1.15rem;
+  background: linear-gradient(145deg, #fff8f2, #f2eaff 58%, #e7f9f2);
+  box-shadow: 0 14px 42px rgb(60 42 91 / 12%);
+  color: var(--ritual-ink);
+}
+
+.ritual-demo__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.ritual-demo__heading h2 {
+  margin: 0.1rem 0 0;
+  color: var(--ritual-ink);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.ritual-demo__actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.45rem; }
+
+.ritual-demo__eyebrow {
+  color: #9275c2;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.ritual-demo__restart {
+  flex: 0 0 auto;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid #c7b4ed;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 72%);
+  color: #594678;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ritual-demo__restart:hover { background: white; }
+.ritual-demo__restart[aria-pressed="true"]:not([data-ritual-spawn]) { background: #e8ddf8; border-color: #a98bd4; }
+.ritual-demo__restart[data-ritual-spawn]:hover { background: white; }
+
+.ritual-demo__stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: min(100%, 390px);
+  aspect-ratio: 9 / 19.5;
+  margin-inline: auto;
+  overflow: hidden;
+  border: 3px solid rgb(255 255 255 / 85%);
+  border-radius: 0.95rem;
+  background: #b7e6c2;
+  box-shadow: 0 8px 24px rgb(55 48 76 / 20%);
+}
+
+.ritual-demo__stage--landscape {
+  width: min(100%, 844px);
+  aspect-ratio: 16 / 9;
+}
+
+.ritual-demo__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #b7e6c2;
+}
+
+.ritual-demo__stage:fullscreen,
+.ritual-demo__stage:-webkit-full-screen,
+.ritual-demo__stage--expanded {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  aspect-ratio: auto;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: #000;
+  z-index: 9999;
+}
+
+.ritual-demo__stage:fullscreen .ritual-demo__screen,
+.ritual-demo__stage:-webkit-full-screen .ritual-demo__screen,
+.ritual-demo__stage--expanded .ritual-demo__screen {
+  width: min(100vw, 46.1538vh);
+  height: min(100vh, 216.6667vw);
+}
+
+.ritual-demo__stage--landscape:fullscreen .ritual-demo__screen,
+.ritual-demo__stage--landscape:-webkit-full-screen .ritual-demo__screen,
+.ritual-demo__stage--landscape.ritual-demo__stage--expanded .ritual-demo__screen {
+  width: min(100vw, 177.7778vh);
+  height: min(100vh, 56.25vw);
+}
+
+.ritual-demo__stage-fullscreen {
+  display: none;
+  position: absolute;
+  top: calc(max(1rem, env(safe-area-inset-top)) + 150px);
+  left: max(1rem, env(safe-area-inset-left));
+  right: auto;
+  z-index: 3;
+  transform: none;
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgb(255 255 255 / 78%);
+  border-radius: 999px;
+  background: rgb(57 47 81 / 82%);
+  color: white;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.ritual-demo__stage:fullscreen .ritual-demo__stage-fullscreen,
+.ritual-demo__stage:-webkit-full-screen .ritual-demo__stage-fullscreen,
+.ritual-demo__stage--expanded .ritual-demo__stage-fullscreen { display: block; }
+
+.ritual-demo__canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  touch-action: none;
+  image-rendering: auto;
+}
+
+.ritual-demo__loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: #b7e6c2;
+  color: #3d5363;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.ritual-demo__loading[hidden] { display: none; }
+
+.ritual-demo__controls {
+  margin: 0.7rem 0 0;
+  color: #655b77;
+  font-size: 0.84rem;
+}
+
+.ritual-demo__controls kbd {
+  padding: 0.12rem 0.35rem;
+  border: 1px solid #d8cbed;
+  border-radius: 0.32rem;
+  background: #fff;
+  color: #51416c;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 540px) {
+  .ritual-demo__heading { align-items: flex-start; }
+  .ritual-demo__restart { padding: 0.45rem 0.65rem; font-size: 0.74rem; }
+}

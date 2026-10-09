@@ -10,3 +10,4 @@
   - [Вариант 5](nbrsm/variant-5.md ':class=no-chevron')
   - [Бонусный вариант](nbrsm/bonus.md ':class=no-chevron')
 - [Попытки придумать крутую кор механику](coolcoremech.md)
+- [Ritual Demo](ritual-demo.md)
