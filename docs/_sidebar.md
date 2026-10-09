@@ -1,4 +1,5 @@
 - [Главная](pages/README.md ':class=no-chevron')
+- [Видение игры](pages/game-vision.md ':class=no-chevron')
 - [Как писать свои доки](pages/tutorial.md ':class=no-chevron')
 - [Ранние идеи](pages/placeholder1.md)
   - [Ночной аишный брейншторм 05.10](pages/nbrsm.md)

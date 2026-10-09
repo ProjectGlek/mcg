@@ -6,4 +6,3 @@
 
 - [Как писать свои доки](pages/tutorial.md ':class=no-chevron')
 - [Ранние идеи](pages/placeholder1.md)
-
