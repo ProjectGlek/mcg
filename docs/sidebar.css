@@ -15,6 +15,73 @@
   margin: 0;
 }
 
+.sidebar-nav li:has(> ul) {
+  position: relative;
+}
+
+.sidebar-nav li:has(> ul) > a {
+  padding-right: 2.6rem;
+}
+
+.sidebar-collapse-toggle {
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 1;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  place-items: center;
+  padding: 0;
+  border: 1px solid var(--sidebar-group-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-bg) 88%, var(--theme-color));
+  color: inherit;
+  font: inherit;
+  line-height: 0;
+  appearance: none;
+  cursor: pointer;
+  transition: background-color 140ms ease, border-color 140ms ease, transform 180ms ease;
+}
+
+.sidebar-collapse-toggle svg {
+  display: block;
+  width: 0.9rem;
+  height: 0.9rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.3;
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  transition: transform 180ms ease;
+}
+
+.sidebar-nav li.is-collapsed > .sidebar-collapse-toggle svg {
+  transform: rotate(-90deg);
+}
+
+.sidebar-collapse-toggle:hover,
+.sidebar-collapse-toggle:focus-visible {
+  border-color: color-mix(in srgb, var(--theme-color) 65%, var(--sidebar-group-border));
+  background: color-mix(in srgb, var(--theme-color) 18%, var(--color-bg));
+}
+
+.sidebar-collapse-toggle:hover {
+  transform: scale(1.05);
+}
+
+.sidebar-collapse-toggle:focus-visible {
+  outline: 2px solid var(--theme-color);
+  outline-offset: 2px;
+}
+
+.sidebar-nav li.is-collapsed > ul {
+  display: none;
+}
+
 .sidebar-nav > ul > li {
   margin: 0.35rem 0;
 }
@@ -77,7 +144,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .sidebar-nav li > a {
+  .sidebar-nav li > a,
+  .sidebar-collapse-toggle,
+  .sidebar-collapse-toggle svg {
     transition: none;
   }
 }
