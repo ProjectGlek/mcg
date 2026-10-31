@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bkmgmoviqppkc"]
+
+[ext_resource type="Script" uid="uid://dawcocfn667mh" path="res://scripts/hud.gd" id="1_ahhtf"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_tbgi4"]
+action = &"start_game"
+
+[sub_resource type="Shortcut" id="Shortcut_jyhfs"]
+events = [SubResource("InputEventAction_tbgi4")]
+
+[node name="HUD" type="CanvasLayer" unique_id=2061240852]
+script = ExtResource("1_ahhtf")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=895252599]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -183.0
+offset_right = 183.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Message" type="Label" parent="." unique_id=380700644]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -11.5
+offset_right = 240.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 64
+text = "Чета текст ебать"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="." unique_id=1408774536]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -530.0
+offset_right = 100.0
+offset_bottom = -430.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+shortcut = SubResource("Shortcut_jyhfs")
+text = "Старт"
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=589593117]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
