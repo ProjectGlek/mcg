@@ -4,6 +4,7 @@
 - [Актульальные задачи](pages/tasks.md ':class=no-chevron')
 - [Вопросы к обсуждению](pages/questions.md ':class=no-chevron')
 - [Как писать свои доки](pages/tutorial.md ':class=no-chevron')
+- [Билды](pages/builds.md ':class=no-chevron')
 - [Ранние идеи](pages/placeholder1.md)
   - [Ночной аишный брейншторм 05.10](pages/nbrsm.md)
     - [Вариант 1](pages/nbrsm/variant-1.md ':class=no-chevron')

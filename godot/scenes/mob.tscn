@@ -1,73 +1,73 @@
-[gd_scene format=3 uid="uid://ckbmrpnorp0ed"]
+[gd_scene format=3 uid="uid://w1j2n0isbllf"]
 
-[ext_resource type="Texture2D" uid="uid://bn0u4mrhla86b" path="res://assets/sprites/Slime1_Walk_body.png" id="1_7p1mj"]
-[ext_resource type="Script" uid="uid://bo2islbmwxa8l" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://bn0u4mrhla86b" path="res://assets/sprites/Slime1_Walk_body.png" id="1_4are2"]
+[ext_resource type="Script" uid="uid://d4jc8f4jw2ux2" path="res://scripts/mob.gd" id="1_bsing"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md0e3"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(0, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(128, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(192, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(384, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ipns3"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(448, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8qclf"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(0, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w8i8w"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(64, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_otmr2"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(128, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wtq4b"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(192, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0cyh"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(256, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g0wcc"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(320, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s1ycm"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(384, 192, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_shcg2"]
-atlas = ExtResource("1_7p1mj")
+atlas = ExtResource("1_4are2")
 region = Rect2(448, 192, 64, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k0ttj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_bsing"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -128,21 +128,19 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_olere"]
-size = Vector2(70, 64)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4cuo"]
+size = Vector2(54, 47)
 
-[node name="Enemy" type="RigidBody2D" unique_id=1756476729]
-collision_mask = 0
-gravity_scale = 0.0
-script = ExtResource("1_md0e3")
-metadata/_edit_group_ = true
+[node name="Mob" type="Area2D" unique_id=141997348]
+script = ExtResource("1_bsing")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=916044850]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=380261015]
 texture_filter = 1
-scale = Vector2(4, 4)
-sprite_frames = SubResource("SpriteFrames_k0ttj")
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_bsing")
 animation = &"walk_right"
+autoplay = "walk_right"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1510896872]
-position = Vector2(2, 0)
-shape = SubResource("RectangleShape2D_olere")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1173405173]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_d4cuo")

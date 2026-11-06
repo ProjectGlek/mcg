@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dw0aqjmsqqf7k"]
+
+[ext_resource type="PackedScene" uid="uid://b68ap04qke6sy" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://qleuyxom1cdy" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ckbmrpnorp0ed" path="res://scenes/enemy.tscn" id="2_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bkmgmoviqppkc" path="res://scenes/hud.tscn" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://d3t11vkfyb7f" path="res://scripts/mob_spawner.gd" id="5_tbgi4"]
+
+[node name="Main" type="Node" unique_id=1313060871]
+script = ExtResource("1_sugp2")
+mob_scene = ExtResource("2_jyhfs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1962635463]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14117648, 0.58431375, 0.26666668, 1)
+
+[node name="Player" parent="." unique_id=526779074 instance=ExtResource("1_o5qli")]
+position = Vector2(331, 387)
+
+[node name="MobTimer" type="Timer" parent="." unique_id=1794377558]
+wait_time = 0.5
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=2062500934]
+
+[node name="StartTimer" type="Timer" parent="." unique_id=89167009]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartPosition" type="Marker2D" parent="." unique_id=1112395920]
+position = Vector2(363, 656)
+
+[node name="HUD" parent="." unique_id=2061240852 instance=ExtResource("4_jyhfs")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=409386160]
+
+[node name="GameOver" type="AudioStreamPlayer2D" parent="." unique_id=1716085900]
+
+[node name="MobSpawner" type="Timer" parent="." unique_id=1844877736]
+wait_time = 3.0
+script = ExtResource("5_tbgi4")
+MaxMobs = 3
+metadata/_custom_type_script = "uid://d3t11vkfyb7f"
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=2047899250]
+offset_left = 99.0
+offset_top = 1128.0
+offset_right = 139.0
+offset_bottom = 1168.0
+joystick_mode = 1
+action_left = &"move_right"
+action_right = &"move_right"
+action_up = &"move_up"
+action_down = &"move_down"
+visibility_mode = 1
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
+[connection signal="timeout" from="ScoreTimer" to="." method="_on_score_timer_timeout"]
+[connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]
+[connection signal="timeout" from="MobSpawner" to="MobSpawner" method="_on_timeout"]

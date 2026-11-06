@@ -13,14 +13,20 @@ extends Timer
 @export var MaxTick : float
 
 func _ready() -> void:
-	pass 
+	pass
 
 func _process(delta: float) -> void:
 	pass
 
 func _on_timeout() -> void:
-	pass 
+	spawn_mob() 
 
 func spawn_mob() -> void :
 	var instace := Enemy.instantiate()
+	var radius := get_viewport().get_visible_rect().size.length() / 2# счетаим радиус от центра как пол идагонали устроства
+	var randAngle := Vector2.from_angle(randf() * TAU)# рандомны угол тау это 2п радиан
+	instace.position = get_viewport().get_visible_rect().size / 2 + randAngle * radius #и умнажаем единичный вектар по углу на радеус
+	instace.target = get_node("../Player")
+	add_child(instace)
+
 	
