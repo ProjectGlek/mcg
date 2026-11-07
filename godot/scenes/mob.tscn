@@ -131,7 +131,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4cuo"]
 size = Vector2(54, 47)
 
-[node name="Mob" type="Area2D" unique_id=141997348]
+[node name="Mob" type="CharacterBody2D" unique_id=1159355459]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_bsing")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=380261015]

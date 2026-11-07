@@ -164,7 +164,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0ttj"]
 size = Vector2(93, 83)
 
-[node name="Player" type="Area2D" unique_id=526779074]
+[node name="Player" type="CharacterBody2D" unique_id=613957326]
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1407254916]
@@ -177,5 +177,3 @@ offset = Vector2(0, -11)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1706724840]
 position = Vector2(-5.5, -6.5)
 shape = SubResource("RectangleShape2D_k0ttj")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

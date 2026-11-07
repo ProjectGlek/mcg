@@ -1,4 +1,4 @@
-extends Area2D 
+extends CharacterBody2D
 
 signal hit
 
@@ -12,7 +12,7 @@ func _ready() -> void:
 	sprite = get_node("AnimatedSprite2D")
 
 func _process(delta: float) -> void:
-	var velocity = Vector2.ZERO
+	velocity = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
@@ -28,8 +28,9 @@ func _process(delta: float) -> void:
 		sprite.animation = "walk"
 		sprite.flip_h = velocity.x < 0
 		idle = 0
-		position += velocity * delta
+		#velocity += velocity * delta
 		position = position.clamp(Vector2.ZERO, screen_size)
+		move_and_slide()
 		
 	if velocity.x == 0 && velocity.y == 0:
 		idle += delta

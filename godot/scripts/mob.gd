@@ -1,4 +1,4 @@
-extends Area2D
+extends CharacterBody2D
 
 var speed = 200
 var target : Node2D
@@ -10,7 +10,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	var direction = (target.position - position).normalized()
-	position += direction * speed * delta
+	var direction : Vector2 = (target.position - position).normalized()
+	velocity = direction * speed
+	move_and_slide()
 	
 	
