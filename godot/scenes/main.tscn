@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b68ap04qke6sy" path="res://scenes/player.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://qleuyxom1cdy" path="res://scripts/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://bgwkmo8auupo2" path="res://scenes/tree.tscn" id="5_o6xl0"]
 [ext_resource type="Script" uid="uid://d3t11vkfyb7f" path="res://scripts/mob_spawner.gd" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://w1j2n0isbllf" path="res://scenes/mob.tscn" id="5_tefeu"]
 
@@ -30,6 +31,7 @@ MaxMobs = 3
 metadata/_custom_type_script = "uid://d3t11vkfyb7f"
 
 [node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=2047899250]
+z_index = 100
 offset_left = 142.0
 offset_top = 1103.0
 offset_right = 182.0
@@ -43,6 +45,104 @@ action_left = &"move_left"
 action_right = &"move_right"
 action_up = &"move_up"
 action_down = &"move_down"
+
+[node name="Trees" type="Node2D" parent="." unique_id=730567337]
+
+[node name="Tree" parent="Trees" unique_id=1625231390 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 104)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree2" parent="Trees" unique_id=1321761554 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 296)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree3" parent="Trees" unique_id=1968343609 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 491)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree4" parent="Trees" unique_id=1464573844 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 684)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree5" parent="Trees" unique_id=607515880 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 892)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree6" parent="Trees" unique_id=1747832894 instance=ExtResource("5_o6xl0")]
+position = Vector2(23, 1106)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree8" parent="Trees" unique_id=1290073665 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 118)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree9" parent="Trees" unique_id=1274525469 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 310)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree10" parent="Trees" unique_id=2121997975 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 505)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree11" parent="Trees" unique_id=332070228 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 697)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree12" parent="Trees" unique_id=1320087211 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 901)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree13" parent="Trees" unique_id=1577587072 instance=ExtResource("5_o6xl0")]
+position = Vector2(682, 1110)
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree14" parent="Trees" unique_id=1496340077 instance=ExtResource("5_o6xl0")]
+position = Vector2(180, 1261)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree15" parent="Trees" unique_id=186460187 instance=ExtResource("5_o6xl0")]
+position = Vector2(370, 1261)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree16" parent="Trees" unique_id=1383592682 instance=ExtResource("5_o6xl0")]
+position = Vector2(555, 1261)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree17" parent="Trees" unique_id=673196400 instance=ExtResource("5_o6xl0")]
+position = Vector2(159, 39)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree18" parent="Trees" unique_id=259487115 instance=ExtResource("5_o6xl0")]
+position = Vector2(349, 39)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
+
+[node name="Tree19" parent="Trees" unique_id=2060471065 instance=ExtResource("5_o6xl0")]
+position = Vector2(534, 39)
+rotation = -1.5707964
+scale = Vector2(4, 4)
+collision_mask = 0
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
 [connection signal="timeout" from="MobSpawner" to="MobSpawner" method="_on_timeout"]
